@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Noah Jelf - Close-Up Magician</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Noah Jelf is a 16-year-old close-up magician and Young Magicians' Club member creating memorable moments for events.">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+            :root { --paper: #f2eee7; --paper-deep: #e7e0d5; --ink: #18201e; --muted: #68716c; --forest: #173d37; --forest-light: #28584f; --coral: #d96f50; --line: rgba(24, 32, 30, .15); --white: #fffdf9; }
+
+            * { box-sizing: border-box; }
+            html { scroll-behavior: smooth; }
+            body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'DM Sans', sans-serif; line-height: 1.6; }
+            a { color: inherit; text-decoration: none; }
+            img { display: block; width: 100%; }
+            .container { width: min(1160px, calc(100% - 64px)); margin: auto; }
+            .eyebrow { color: var(--coral); font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+            h1, h2, h3, p { margin-top: 0; }
+            h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
+            h1 { max-width: 620px; font-size: clamp(3.7rem, 8vw, 7.2rem); line-height: .95; margin-bottom: 1.5rem; letter-spacing: -.03em; }
+            h1 em { color: var(--coral); }
+            h2 { font-size: clamp(2.4rem, 5vw, 4.3rem); line-height: 1; font-weight: 500; letter-spacing: -.03em; }
+            .btn { display: inline-flex; align-items: center; gap: .8rem; padding: .95rem 1.3rem; border: 1px solid var(--forest); background: var(--forest); color: var(--white); font: 700 .72rem 'DM Sans', sans-serif; letter-spacing: .12em; text-transform: uppercase; transition: transform .25s, background .25s; }
+            .btn:after { content: '↗'; font-size: 1rem; line-height: 0; }
+            .btn:hover { background: var(--coral); border-color: var(--coral); transform: translateY(-3px); }
+
+            header { position: absolute; z-index: 2; top: 0; width: 100%; padding: 1.6rem 0; color: var(--white); border-bottom: 1px solid rgba(255,255,255,.24); }
+            nav { display: flex; align-items: center; justify-content: space-between; }
+            .logo { font-size: 1rem; font-weight: 700; letter-spacing: .14em; }
+            .logo span { color: #f3a082; }
+            nav ul { display: flex; gap: 2.1rem; list-style: none; margin: 0; padding: 0; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+            nav a:hover { color: #f3a082; }
+            .menu { display: none; background: none; border: 0; color: var(--white); font-size: 1.5rem; }
+
+            .hero { min-height: 760px; display: grid; align-items: center; position: relative; overflow: hidden; color: var(--white); background: var(--forest); }
+            .hero-media { position: absolute; inset: 0; height: 100%; object-fit: cover; object-position: 58% center; opacity: .67; animation: heroZoom 12s ease-out both; }
+            .hero:after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(9,24,22,.93), rgba(13,42,37,.73) 43%, rgba(13,42,37,.16)); }
+            .hero-copy { position: relative; z-index: 1; max-width: 700px; padding-top: 5rem; }
+            .hero-copy > * { animation: rise .8s both; }
+            .hero-copy h1 { animation-delay: .12s; }
+            .hero-copy p { animation-delay: .22s; }
+            .hero-copy .btn { animation-delay: .32s; }
+            .hero p { max-width: 470px; color: rgba(255,255,255,.78); font-size: 1.08rem; }
+            .hero .eyebrow { color: #f3a082; }
+            .scroll { position: absolute; z-index: 1; bottom: 2rem; color: rgba(255,255,255,.72); font-size: .68rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+            .scroll:before { content: ''; display: inline-block; width: 42px; height: 1px; margin: 0 .8rem .25rem 0; background: var(--coral); }
+
+            section { padding: 7rem 0; }
+            .intro { display: grid; grid-template-columns: minmax(280px,.9fr) 1fr; gap: clamp(3rem,9vw,8rem); align-items: center; }
+            .intro-copy p, .card p, .contact p { color: var(--muted); }
+            .portrait { position: relative; overflow: hidden; aspect-ratio: 4 / 5; background: var(--forest); }
+            .portrait img { height: 100%; object-fit: cover; object-position: 72% center; transition: transform .7s; }
+            .portrait:hover img { transform: scale(1.04); }
+            .portrait:after { content: 'NOAH JELF'; position: absolute; right: -2.7rem; bottom: 4.7rem; color: rgba(255,255,255,.75); font-size: .65rem; font-weight: 700; letter-spacing: .2em; transform: rotate(-90deg); }
+            .intro-copy p { max-width: 510px; font-size: 1.05rem; }
+            .intro-copy .btn { margin-top: .6rem; background: transparent; color: var(--forest); }
+            .intro-copy .btn:hover { color: var(--white); }
+            .card-break { padding: 2rem 0; background: var(--paper-deep); }
+            .card-break .container { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .card-break figure { position: relative; overflow: hidden; height: 190px; margin: 0; background: var(--forest); }
+            .card-break img { height: 100%; object-fit: cover; filter: saturate(.8); transition: transform .6s; }
+            .card-break figure:first-child img { object-position: center 62%; }
+            .card-break figure:last-child img { object-position: center 48%; }
+            .card-break figure:hover img { transform: scale(1.04); }
+            .services { color: var(--white); background: var(--forest); }
+            .section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 3rem; }
+            .section-heading p { max-width: 330px; color: rgba(255,255,255,.68); }
+            .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+            .card { overflow: hidden; min-height: 430px; display: flex; flex-direction: column; background: #204b44; transition: transform .3s, background .3s; }
+            .card:hover { background: var(--forest-light); transform: translateY(-8px); }
+            .card-media { height: 210px; overflow: hidden; }
+            .card-media img { height: 100%; object-fit: cover; filter: saturate(.78); transition: transform .6s; }
+            .card:hover .card-media img { transform: scale(1.06); }
+            .card-body { padding: 1.7rem; }
+            .card b { color: #f3a082; font-size: .76rem; letter-spacing: .14em; }
+            .card h3 { font-size: 1.8rem; font-weight: 500; margin: .8rem 0 .6rem; }
+            .card p { margin-bottom: 0; color: rgba(255,255,255,.69); font-size: .92rem; }
+            .quote { text-align: center; background: var(--paper-deep); }
+            blockquote { max-width: 780px; margin: 2rem auto; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 3.2vw, 3rem); line-height: 1.18; font-style: italic; }
+            cite { color: var(--muted); font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+            .contact { color: var(--white); background: var(--coral); text-align: center; }
+            .contact .eyebrow { color: var(--forest); }
+            .contact p { max-width: 490px; margin: 0 auto 2rem; color: rgba(24,32,30,.75); }
+            .contact .btn { border-color: var(--forest); background: var(--forest); }
+            footer { border-top: 1px solid var(--line); padding: 1.5rem 0; color: var(--muted); background: var(--paper); font-size: .75rem; }
+            footer .container { display: flex; justify-content: space-between; }
+            @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+            @keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+            @media (prefers-reduced-motion: reduce) { *, *:before, *:after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+            @media (max-width: 700px) {
+                nav ul { display: none; position: absolute; left: 20px; right: 20px; top: 65px; padding: 1.2rem; background: var(--forest); flex-direction: column; gap: 1rem; }
+                nav ul.open { display: flex; }
+                .menu { display: block; }
+                .hero { min-height: 680px; }
+                .hero-media { object-position: 62% center; }
+                .hero:after { background: linear-gradient(90deg, rgba(9,24,22,.92), rgba(13,42,37,.42)); }
+                .intro, .cards { grid-template-columns: 1fr; gap: 2rem; }
+                .card-break .container { grid-template-columns: 1fr; gap: 1rem; }
+                .card-break figure { height: 150px; }
+                section { padding: 4.5rem 0; }
+                .section-heading { display: block; }
+                .portrait { min-height: 280px; }
+                .card { min-height: 0; }
+                footer .container { display: block; text-align: center; }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav aria-label="Main navigation">
+                    <a class="logo" href="#top">NOAH <span>JELF</span></a>
+                    <button class="menu" aria-label="Toggle menu" aria-expanded="false">☰</button>
+                    <ul>
+                        <li><a href="#story">The story</a></li>
+                        <li><a href="#magic">The magic</a></li>
+                        <li><a href="#contact">Book Noah</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="top">
+            <section class="hero">
+                <img class="hero-media" src="Pictures/20260508_FFLM _443.jpg" alt="Noah performing a linking rings routine at an event">
+                <div class="container hero-copy">
+                    <div class="eyebrow">16-year-old magician · Young Magicians' Club member</div>
+                    <h1>Wonder,<br><em>up close.</em></h1>
+                    <p>Impossible moments, made personal. Noah brings sharp sleight of hand, warm storytelling, and a room full of people leaning in.</p>
+                    <a class="btn" href="#contact">Make it magical</a>
+                </div>
+                <div class="container scroll">↓ Discover the impossible</div>
+            </section>
+
+            <section id="story">
+                <div class="container intro">
+                    <div class="portrait"><img src="Pictures/20260508_FFLM _434.jpg" alt="Noah Jelf in his magician's suit"></div>
+                    <div class="intro-copy">
+                        <div class="eyebrow">Meet Noah</div>
+                        <h2>Young, curious, and seriously magical.</h2>
+                        <p>I'm Noah, a 16-year-old close-up magician and member of the Young Magicians' Club - the youth initiative of the Magic Circle. My magic happens in your hands, around your table, and in the moments you least expect it.</p>
+                        <p>Whether I'm performing for a small group or moving through a busy event, I tailor each performance to the people in front of me. The result is less a show, more a story your guests get to tell.</p>
+                        <a class="btn" href="#magic">See the possibilities</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services" id="magic">
+                <div class="container">
+                    <div class="section-heading"><div><div class="eyebrow">Choose your impossible</div><h2>The magic</h2></div><p>Elegant, astonishing entertainment for moments worth remembering.</p></div>
+                    <div class="cards">
+                        <article class="card"><div class="card-media"><img src="Pictures/20260508_FFLM _489.jpg" alt="Guests enjoying close-up magic at a private event"></div><div class="card-body"><b>01 / PRIVATE</b><h3>Private parties</h3><p>Effortless entertainment that gets every guest talking, laughing, and joining in.</p></div></article>
+                        <article class="card"><div class="card-media"><img src="Pictures/20260508_FFLM _505.jpg" alt="A lively formal event with guests at dinner"></div><div class="card-body"><b>02 / CELEBRATE</b><h3>Weddings</h3><p>Keep the magic flowing between photographs, ceremonies, and celebrations.</p></div></article>
+                        <article class="card"><div class="card-media"><img src="Pictures/20260508_FFLM _448.jpg" alt="Noah performing with guests gathered around"></div><div class="card-body"><b>03 / CONNECT</b><h3>Corporate events</h3><p>A memorable way to break the ice and turn introductions into connections.</p></div></article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quote"><div class="container"><div class="eyebrow">What people say</div><blockquote>“Noah made the impossible feel completely natural. The highlight of our evening.”</blockquote><cite>Sophie M. · Private event</cite></div></section>
+            <section class="contact" id="contact"><div class="container"><div class="eyebrow">Based in Buckingham · Covering London, the Home Counties & beyond</div><h2>Ready to believe?</h2><p>Tell me about your event and let's create a little impossible together.</p><a class="btn" href="mailto:noah@vilu-miran.com">Get in touch</a></div></section>
+        </main>
+        <footer><div class="container"><span>© 2026 Noah Jelf</span><span>Making lasting memories through magic.</span><span><a href="https://www.instagram.com/jelfus.magic" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61588926009670" target="_blank" rel="noopener noreferrer">Facebook</a></span></div></footer>
+        <script>
+            const menu = document.querySelector('.menu');
+            const links = document.querySelector('nav ul');
+            menu.addEventListener('click', () => {
+                const isOpen = links.classList.toggle('open');
+                menu.setAttribute('aria-expanded', isOpen);
+            });
+            links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+                links.classList.remove('open');
+                menu.setAttribute('aria-expanded', 'false');
+            }));
+        </script>
+    </body>
+</html>
+    
