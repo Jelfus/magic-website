@@ -37,11 +37,11 @@
         h1 { max-width: 720px; margin: .8rem 0 1rem; font-size: clamp(3.4rem, 8vw, 7rem); line-height: .95; }
         .intro p { max-width: 540px; color: var(--muted); font-size: 1.05rem; }
         .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; padding-bottom: 7rem; }
-        figure { position: relative; grid-column: span 4; overflow: hidden; min-height: 300px; margin: 0; background: var(--forest); }
+        figure { position: relative; grid-column: span 4; overflow: hidden; min-height: 300px; margin: 0; background: var(--forest); content-visibility: auto; contain-intrinsic-size: 300px 300px; }
         figure:nth-child(5n + 1), figure:nth-child(5n + 4) { grid-column: span 8; }
-        figure img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; transition: transform .6s; }
+        figure img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; transition: transform .6s; content-visibility: auto; }
         figure:hover img { transform: scale(1.05); }
-        figcaption { position: absolute; right: 1rem; bottom: 1rem; left: 1rem; color: var(--white); font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-shadow: 0 1px 12px rgba(0,0,0,.7); }
+        figcaption { display: none; }
         footer { padding: 1.5rem 0; color: var(--muted); background: var(--paper-deep); font-size: .75rem; }
         footer .container { display: flex; justify-content: space-between; }
         @media (max-width: 700px) {
@@ -115,6 +115,13 @@
 </main>
 <footer><div class="container"><span>© 2026 Noah Jelf</span><span>Making lasting memories through magic.</span><span><a href="contact.html">Book Noah</a> · <a href="https://www.instagram.com/jelfus.magic" target="_blank" rel="noopener noreferrer">Instagram</a></span></div></footer>
 <script>
+    document.querySelectorAll('.gallery img').forEach(image => {
+        const originalSource = image.getAttribute('src');
+        image.srcset = originalSource.replace('Pictures/', 'Pictures/optimized/');
+        image.sizes = '(max-width: 700px) 100vw, 66vw';
+        image.decoding = 'async';
+        image.fetchPriority = 'low';
+    });
     const menu = document.querySelector('.menu');
     const links = document.querySelector('nav ul');
     menu.addEventListener('click', () => { const isOpen = links.classList.toggle('open'); menu.setAttribute('aria-expanded', isOpen); });
