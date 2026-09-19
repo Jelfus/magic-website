@@ -37,10 +37,10 @@
         h1 { max-width: 720px; margin: .8rem 0 1rem; font-size: clamp(3.4rem, 8vw, 7rem); line-height: .95; }
         .intro p { max-width: 540px; color: var(--muted); font-size: 1.05rem; }
         .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; padding-bottom: 7rem; }
-        figure { position: relative; grid-column: span 4; overflow: hidden; min-height: 300px; margin: 0; background: var(--forest); content-visibility: auto; contain-intrinsic-size: 300px 300px; }
+        figure { position: relative; grid-column: span 4; overflow: hidden; aspect-ratio: 3 / 2; margin: 0; background: var(--paper-deep); content-visibility: auto; contain-intrinsic-size: 300px 200px; }
         figure:nth-child(5n + 1), figure:nth-child(5n + 4) { grid-column: span 8; }
-        figure img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; transition: transform .6s; content-visibility: auto; }
-        figure:hover img { transform: scale(1.05); }
+        figure img { width: 100%; height: 100%; object-fit: contain; transition: filter .3s; content-visibility: auto; }
+        figure:hover img { filter: brightness(1.06); }
         figcaption { display: none; }
         footer { padding: 1.5rem 0; color: var(--muted); background: var(--paper-deep); font-size: .75rem; }
         footer .container { display: flex; justify-content: space-between; }
@@ -51,8 +51,7 @@
             .menu { display: block; }
             .intro { padding: 4.5rem 0 3rem; }
             .gallery { display: block; padding-bottom: 4.5rem; }
-            figure, figure:nth-child(5n + 1), figure:nth-child(5n + 4) { min-height: 260px; margin-bottom: 1rem; }
-            figure img { min-height: 260px; }
+            figure, figure:nth-child(5n + 1), figure:nth-child(5n + 4) { aspect-ratio: 3 / 2; margin-bottom: 1rem; }
             footer .container { display: block; text-align: center; }
             footer span { display: block; margin: .3rem 0; }
         }
@@ -64,14 +63,11 @@
 <main>
     <section class="intro"><div class="container"><div class="eyebrow">Magic in the moment</div><h1>A little impossible, caught on camera.</h1><p>Close-up magic is best experienced from inches away, surrounded by the people you came to celebrate with. Here is a glimpse of Noah performing at recent events.</p></div></section>
     <section class="gallery container" aria-label="Photos from Noah's magic performances">
-        <figure><a href="Pictures/20260508_FFLM _434.jpg"><img src="Pictures/20260508_FFLM _434.jpg" alt="Noah Jelf in his magician's suit" loading="lazy"><figcaption>Noah Jelf</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _438.jpg"><img src="Pictures/20260508_FFLM _438.jpg" alt="Noah performing close-up magic for guests" loading="lazy"><figcaption>Close-up magic</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _439.jpg"><img src="Pictures/20260508_FFLM _439.jpg" alt="A guest watching a magic routine" loading="lazy"><figcaption>Impossible moments</figcaption></a></figure>
-        <figure><a href="Pictures/20260508_FFLM _443.jpg"><img src="Pictures/20260508_FFLM _443.jpg" alt="Noah performing a linking rings routine at an event" loading="lazy"><figcaption>Live performance</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _444.jpg"><img src="Pictures/20260508_FFLM _444.jpg" alt="Guests gathered around Noah during a magic performance" loading="lazy"><figcaption>In the crowd</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _446.jpg"><img src="Pictures/20260508_FFLM _446.jpg" alt="Close-up magic at a celebration" loading="lazy"><figcaption>At the table</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _447.jpg"><img src="Pictures/20260508_FFLM _447.jpg" alt="Noah entertaining guests at an event" loading="lazy"><figcaption>Shared wonder</figcaption></a></figure>
-        <figure><a href="Pictures/20260508_FFLM _448.jpg"><img src="Pictures/20260508_FFLM _448.jpg" alt="Noah performing with guests gathered around" loading="lazy"><figcaption>Making connections</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _449.jpg"><img src="Pictures/20260508_FFLM _449.jpg" alt="A guest reacting to close-up magic" loading="lazy"><figcaption>Great reactions</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _451.jpg"><img src="Pictures/20260508_FFLM _451.jpg" alt="Noah performing magic for a group" loading="lazy"><figcaption>Table magic</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _455.jpg"><img src="Pictures/20260508_FFLM _455.jpg" alt="Guests enjoying an informal magic performance" loading="lazy"><figcaption>Up close</figcaption></a></figure>
@@ -81,7 +77,6 @@
         <figure><a href="Pictures/20260508_FFLM _470.jpg"><img src="Pictures/20260508_FFLM _470.jpg" alt="Guests watching a sleight of hand routine" loading="lazy"><figcaption>Sleight of hand</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _471.jpg"><img src="Pictures/20260508_FFLM _471.jpg" alt="Noah entertaining guests at a private event" loading="lazy"><figcaption>Private events</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _488.jpg"><img src="Pictures/20260508_FFLM _488.jpg" alt="A close-up view of magic in progress" loading="lazy"><figcaption>Right there</figcaption></a></figure>
-        <figure><a href="Pictures/20260508_FFLM _489.jpg"><img src="Pictures/20260508_FFLM _489.jpg" alt="Guests enjoying close-up magic at a private event" loading="lazy"><figcaption>Private party</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _490.jpg"><img src="Pictures/20260508_FFLM _490.jpg" alt="A guest enjoying a magic trick" loading="lazy"><figcaption>Magic for everyone</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _491.jpg"><img src="Pictures/20260508_FFLM _491.jpg" alt="Noah performing for guests at an event" loading="lazy"><figcaption>Event entertainment</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _492.jpg"><img src="Pictures/20260508_FFLM _492.jpg" alt="A reaction during a close-up magic routine" loading="lazy"><figcaption>The reaction</figcaption></a></figure>
@@ -90,7 +85,6 @@
         <figure><a href="Pictures/20260508_FFLM _499.jpg"><img src="Pictures/20260508_FFLM _499.jpg" alt="A guest taking part in a magic trick" loading="lazy"><figcaption>In your hands</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _500.jpg"><img src="Pictures/20260508_FFLM _500.jpg" alt="Noah creating a memorable moment at an event" loading="lazy"><figcaption>Memorable moments</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _501.jpg"><img src="Pictures/20260508_FFLM _501.jpg" alt="Close-up magic surrounded by guests" loading="lazy"><figcaption>Surrounded by wonder</figcaption></a></figure>
-        <figure><a href="Pictures/20260508_FFLM _505.jpg"><img src="Pictures/20260508_FFLM _505.jpg" alt="A lively formal event with guests at dinner" loading="lazy"><figcaption>Weddings</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _506.jpg"><img src="Pictures/20260508_FFLM _506.jpg" alt="Noah entertaining guests during a celebration" loading="lazy"><figcaption>Celebrations</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _509.jpg"><img src="Pictures/20260508_FFLM _509.jpg" alt="A close-up magic performance at a formal event" loading="lazy"><figcaption>Formal events</figcaption></a></figure>
         <figure><a href="Pictures/20260508_FFLM _511.jpg"><img src="Pictures/20260508_FFLM _511.jpg" alt="A guest reacting to an impossible magic moment" loading="lazy"><figcaption>Believe your eyes</figcaption></a></figure>
