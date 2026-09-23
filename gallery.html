@@ -60,7 +60,7 @@
     </style>
 </head>
 <body>
-<header><div class="container"><nav aria-label="Main navigation"><a class="logo" href="index.html">NOAH <span>JELF</span></a><button class="menu" aria-label="Toggle menu" aria-expanded="false">☰</button><ul><li><a href="index.html#story">The story</a></li><li><a href="index.html#magic">The magic</a></li><li><a href="gallery.html" aria-current="page">Gallery</a></li><li><a href="contact.html">Book Noah</a></li></ul></nav></div></header>
+<header><div class="container"><nav aria-label="Main navigation"><a class="logo" href="index.html">NOAH <span>JELF</span></a><button class="menu" type="button" aria-label="Toggle menu" aria-controls="site-menu" aria-expanded="false">☰</button><ul id="site-menu"><li><a href="index.html#story">The story</a></li><li><a href="magic.html">The magic</a></li><li><a href="gallery.html" aria-current="page">Gallery</a></li><li><a href="contact.html">Book Noah</a></li></ul></nav></div></header>
 <main>
     <section class="intro"><div class="container"><div class="eyebrow">Magic in the moment</div><h1>A little impossible, caught on camera.</h1><p>Close-up magic is best experienced from inches away, surrounded by the people you came to celebrate with. Here is a glimpse of Noah performing at recent events.</p></div></section>
     <section class="gallery container" aria-label="Photos from Noah's magic performances">
@@ -125,6 +125,7 @@
     const menu = document.querySelector('.menu');
     const links = document.querySelector('nav ul');
     menu.addEventListener('click', () => { const isOpen = links.classList.toggle('open'); menu.setAttribute('aria-expanded', isOpen); });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { links.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); }));
 </script>
 </body>
 </html>

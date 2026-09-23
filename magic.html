@@ -41,6 +41,7 @@
             .logo span { color: #f3a082; }
             nav ul { display: flex; gap: 2.1rem; list-style: none; margin: 0; padding: 0; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
             nav a:hover { color: #f3a082; }
+            .menu { display: none; padding: 0; border: 0; background: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
             .hero { min-height: 650px; display: grid; align-items: center; position: relative; overflow: hidden; color: var(--white); background: var(--forest); }
             .hero-media { position: absolute; inset: 0; height: 100%; object-fit: cover; object-position: center 42%; opacity: .52; }
             .hero:after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(9,24,22,.94), rgba(13,42,37,.68) 55%, rgba(13,42,37,.2)); }
@@ -69,7 +70,9 @@
             footer .container { display: flex; justify-content: space-between; }
             @media (max-width: 700px) {
                 .container { width: min(100% - 40px, 1160px); }
-                nav ul { gap: 1rem; font-size: .65rem; }
+                nav ul { display: none; position: absolute; z-index: 2; left: 20px; right: 20px; top: 65px; padding: 1.2rem; background: var(--forest); flex-direction: column; gap: 1rem; font-size: .65rem; }
+                nav ul.open { display: flex; }
+                .menu { display: block; }
                 .hero { min-height: 600px; }
                 .lead, .offer { grid-template-columns: 1fr; gap: 2rem; }
                 .offer:nth-of-type(odd) .offer-image { order: 0; }
@@ -85,7 +88,8 @@
             <div class="container">
                 <nav aria-label="Main navigation">
                     <a class="logo" href="index.html">NOAH <span>JELF</span></a>
-                    <ul>
+                    <button class="menu" type="button" aria-label="Toggle menu" aria-controls="site-menu" aria-expanded="false">☰</button>
+                    <ul id="site-menu">
                         <li><a href="index.html#story">The story</a></li>
                         <li><a href="magic.html">The magic</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
@@ -132,5 +136,17 @@
             <section class="cta"><div class="container"><div class="eyebrow">Based in Buckingham · Covering London, the Home Counties & beyond</div><h2>Ready to believe?</h2><p>Tell Noah about your plans and find the right kind of magic for your guests.</p><a class="btn" href="contact.html">Get in touch</a></div></section>
         </main>
         <footer><div class="container"><span>© 2026 Noah Jelf</span><span>Making lasting memories through magic.</span><span><a href="https://www.instagram.com/jelfus.magic" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61588926009670" target="_blank" rel="noopener noreferrer">Facebook</a></span></div></footer>
+        <script>
+            const menu = document.querySelector('.menu');
+            const links = document.querySelector('nav ul');
+            menu.addEventListener('click', () => {
+                const isOpen = links.classList.toggle('open');
+                menu.setAttribute('aria-expanded', isOpen);
+            });
+            links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+                links.classList.remove('open');
+                menu.setAttribute('aria-expanded', 'false');
+            }));
+        </script>
     </body>
 </html>
