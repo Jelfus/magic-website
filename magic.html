@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>The Magic | Noah Jelf Close-Up Magician</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Discover Noah Jelf's close-up magic for private parties, weddings and corporate events across Buckingham, London and the Home Counties.">
+        <meta name="author" content="Noah Jelf">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#173d37">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="The Magic | Noah Jelf Close-Up Magician">
+        <meta property="og:description" content="Close-up magic made personal for private parties, weddings and corporate events.">
+        <meta property="og:image" content="Pictures/20260508_FFLM _448.jpg">
+        <meta property="og:image:alt" content="Noah Jelf performing close-up magic at an event">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+            :root { --paper: #f2eee7; --paper-deep: #e7e0d5; --ink: #18201e; --muted: #68716c; --forest: #173d37; --forest-light: #28584f; --coral: #d96f50; --line: rgba(24, 32, 30, .15); --white: #fffdf9; }
+            * { box-sizing: border-box; }
+            html { scroll-behavior: smooth; }
+            body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'DM Sans', sans-serif; line-height: 1.6; }
+            a { color: inherit; text-decoration: none; }
+            img { display: block; width: 100%; }
+            .container { width: min(1160px, calc(100% - 64px)); margin: auto; }
+            .eyebrow { color: var(--coral); font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+            h1, h2, h3, p { margin-top: 0; }
+            h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
+            h1 { max-width: 720px; margin-bottom: 1.5rem; font-size: clamp(3.7rem, 8vw, 7.2rem); line-height: .95; letter-spacing: -.03em; }
+            h1 em { color: var(--coral); }
+            h2 { margin-bottom: 1.2rem; font-size: clamp(2.4rem, 5vw, 4.3rem); line-height: 1; letter-spacing: -.03em; }
+            h3 { margin: .7rem 0 .7rem; font-size: 2rem; line-height: 1.05; }
+            .btn { display: inline-flex; align-items: center; gap: .8rem; padding: .95rem 1.3rem; border: 1px solid var(--forest); background: var(--forest); color: var(--white); font: 700 .72rem 'DM Sans', sans-serif; letter-spacing: .12em; text-transform: uppercase; transition: transform .25s, background .25s; }
+            .btn:after { content: '->'; font-size: 1rem; line-height: 0; }
+            .btn:hover { border-color: var(--coral); background: var(--coral); transform: translateY(-3px); }
+            header { position: absolute; z-index: 2; top: 0; width: 100%; padding: 1.6rem 0; color: var(--white); border-bottom: 1px solid rgba(255,255,255,.24); }
+            nav { display: flex; align-items: center; justify-content: space-between; }
+            .logo { font-size: 1rem; font-weight: 700; letter-spacing: .14em; }
+            .logo span { color: #f3a082; }
+            nav ul { display: flex; gap: 2.1rem; list-style: none; margin: 0; padding: 0; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+            nav a:hover { color: #f3a082; }
+            .hero { min-height: 650px; display: grid; align-items: center; position: relative; overflow: hidden; color: var(--white); background: var(--forest); }
+            .hero-media { position: absolute; inset: 0; height: 100%; object-fit: cover; object-position: center 42%; opacity: .52; }
+            .hero:after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(9,24,22,.94), rgba(13,42,37,.68) 55%, rgba(13,42,37,.2)); }
+            .hero-copy { position: relative; z-index: 1; max-width: 760px; padding-top: 5rem; }
+            .hero p { max-width: 570px; color: rgba(255,255,255,.8); font-size: 1.08rem; }
+            .hero .eyebrow { color: #f3a082; }
+            .content { padding: 7rem 0 5rem; }
+            .lead { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(3rem, 9vw, 8rem); align-items: start; margin-bottom: 6rem; }
+            .lead h2 { margin-top: 0; }
+            .lead-copy { max-width: 600px; color: var(--muted); font-size: 1.05rem; }
+            .lead-copy p:last-child { margin-bottom: 0; }
+            .offer { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding: 5rem 0; border-top: 1px solid var(--line); scroll-margin-top: 2rem; }
+            .offer:nth-of-type(odd) .offer-image { order: 2; }
+            .offer-image { overflow: hidden; aspect-ratio: 4 / 3; background: var(--forest); }
+            .offer-image img { height: 100%; object-fit: cover; transition: transform .7s; }
+            .offer:hover img { transform: scale(1.04); }
+            .offer-copy { max-width: 500px; }
+            .offer-copy p { color: var(--muted); }
+            .offer-copy b { color: var(--coral); font-size: .74rem; letter-spacing: .14em; }
+            .offer-copy .btn { margin-top: .6rem; background: transparent; color: var(--forest); }
+            .offer-copy .btn:hover { color: var(--white); }
+            .cta { padding: 6rem 0; color: var(--white); background: var(--coral); text-align: center; }
+            .cta .eyebrow { color: var(--forest); }
+            .cta p { max-width: 520px; margin: 0 auto 2rem; color: rgba(24,32,30,.75); }
+            footer { border-top: 1px solid var(--line); padding: 1.5rem 0; color: var(--muted); background: var(--paper); font-size: .75rem; }
+            footer .container { display: flex; justify-content: space-between; }
+            @media (max-width: 700px) {
+                .container { width: min(100% - 40px, 1160px); }
+                nav ul { gap: 1rem; font-size: .65rem; }
+                .hero { min-height: 600px; }
+                .lead, .offer { grid-template-columns: 1fr; gap: 2rem; }
+                .offer:nth-of-type(odd) .offer-image { order: 0; }
+                .content { padding: 4.5rem 0 2rem; }
+                .offer { padding: 4rem 0; }
+                footer .container { display: block; text-align: center; }
+                footer span { display: block; margin: .3rem 0; }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav aria-label="Main navigation">
+                    <a class="logo" href="index.html">NOAH <span>JELF</span></a>
+                    <ul>
+                        <li><a href="index.html#story">The story</a></li>
+                        <li><a href="magic.html">The magic</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Book Noah</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <img class="hero-media" src="Pictures/20260508_FFLM _448.jpg" alt="Noah performing close-up magic for a group of guests">
+                <div class="container hero-copy">
+                    <div class="eyebrow">Close-up magic for every kind of gathering</div>
+                    <h1>The magic,<br><em>made personal.</em></h1>
+                    <p>Magic works best when it feels as though it could only have happened to you. Noah performs beside your guests, using sharp sleight of hand, thoughtful storytelling and plenty of room for surprise.</p>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="container">
+                    <div class="lead">
+                        <div><div class="eyebrow">A closer look</div><h2>Moments people remember.</h2></div>
+                        <div class="lead-copy"><p>The magic is designed for real conversations and real celebrations. There is no stage to find and no audience to arrange: Noah moves naturally through the room, performing for small groups and making each person part of the impossible moment.</p><p>From a borrowed ring appearing somewhere unexpected to a prediction that seems to know exactly what someone was thinking, every routine is selected for the people in front of him. The pace can be lively, elegant or quietly astonishing, depending on the atmosphere you want to create.</p><p>Choose the setting that fits your event below, or get in touch to talk through something completely tailored.</p></div>
+                    </div>
+
+                    <article class="offer" id="private-parties">
+                        <div class="offer-image"><img src="Pictures/20260508_FFLM _489.jpg" alt="Guests laughing during close-up magic at a private party"></div>
+                        <div class="offer-copy"><b>01 / PRIVATE PARTIES</b><h3>Turn a room of guests into one shared secret.</h3><p>Private party magic gives guests an easy reason to talk to one another. Noah can move between groups during drinks, dinner or a relaxed celebration, bringing impossible moments directly to each circle. The performance is informal, interactive and flexible enough to fit the rhythm of your evening.</p><p>It is ideal for birthdays, anniversaries, garden parties and family celebrations where you want entertainment that feels personal rather than programmed.</p><a class="btn" href="contact.html">Plan your party</a></div>
+                    </article>
+
+                    <article class="offer" id="weddings">
+                        <div class="offer-image"><img src="Pictures/20260508_FFLM _505.jpg" alt="Guests enjoying magic at a wedding reception"></div>
+                        <div class="offer-copy"><b>02 / WEDDINGS</b><h3>Fill the in-between moments with wonder.</h3><p>Wedding days naturally have moments when guests are waiting: between the ceremony and photographs, while the room is being prepared, or before the wedding breakfast begins. Close-up magic keeps the energy warm and gives friends and family a memorable way to meet.</p><p>Noah works around your schedule and joins the celebration without taking attention away from the couple. Every group gets a moment of its own, making the magic part of the story of the day.</p><a class="btn" href="contact.html">Talk about your wedding</a></div>
+                    </article>
+
+                    <article class="offer" id="corporate-events">
+                        <div class="offer-image"><img src="Pictures/20260508_FFLM _448.jpg" alt="Noah performing close-up magic at a corporate event"></div>
+                        <div class="offer-copy"><b>03 / CORPORATE EVENTS</b><h3>Make introductions feel effortless.</h3><p>Corporate events can bring together people who do not know one another yet. Magic gives them an immediate shared experience, making conversation easier at receptions, networking events, dinners and team celebrations.</p><p>Noah's performance is polished and adaptable, with routines that can energise a room without interrupting the programme. It is a distinctive way to welcome guests, reward a team or make your event stand out.</p><a class="btn" href="contact.html">Make an enquiry</a></div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="cta"><div class="container"><div class="eyebrow">Based in Buckingham · Covering London, the Home Counties & beyond</div><h2>Ready to believe?</h2><p>Tell Noah about your plans and find the right kind of magic for your guests.</p><a class="btn" href="contact.html">Get in touch</a></div></section>
+        </main>
+        <footer><div class="container"><span>© 2026 Noah Jelf</span><span>Making lasting memories through magic.</span><span><a href="https://www.instagram.com/jelfus.magic" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61588926009670" target="_blank" rel="noopener noreferrer">Facebook</a></span></div></footer>
+    </body>
+</html>
