@@ -117,8 +117,12 @@
             .card h3 { font-size: 1.8rem; font-weight: 500; margin: .8rem 0 .6rem; }
             .card p { margin-bottom: 0; color: rgba(255,255,255,.69); font-size: .92rem; }
             .quote { text-align: center; background: var(--paper-deep); }
-            blockquote { max-width: 780px; margin: 2rem auto; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 3.2vw, 3rem); line-height: 1.18; font-style: italic; }
-            cite { color: var(--muted); font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+            .quote-carousel { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.25rem; margin-top: 2rem; }
+            .quote-panel { display: flex; flex-direction: column; justify-content: center; min-height: 220px; }
+            blockquote { max-width: 780px; margin: 0 auto; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 3.2vw, 3rem); line-height: 1.18; font-style: italic; }
+            .quote-nav { width: 48px; height: 48px; border: 1px solid rgba(23, 61, 55, .25); border-radius: 50%; background: rgba(255,255,255,.35); color: var(--forest); font-size: 1.5rem; line-height: 1; cursor: pointer; transition: transform .2s, background .2s; }
+            .quote-nav:hover { background: rgba(255,255,255,.65); transform: translateY(-2px); }
+            cite { display: block; margin-top: 1rem; color: var(--muted); font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
             .contact { color: var(--white); background: var(--coral); text-align: center; }
             .contact .eyebrow { color: var(--forest); }
             .contact p { max-width: 490px; margin: 0 auto 2rem; color: rgba(24,32,30,.75); }
@@ -198,7 +202,7 @@
                 </div>
             </section>
 
-            <section class="quote"><div class="container"><div class="eyebrow">What people say</div><blockquote id="quote-text">Noah was such an impressive addition to the occasion. He was professional, well-prepared, and fitted the atmosphere perfectly. We would happily book him again.</blockquote><cite id="quote-author">Holly Britten, Head of Marketing · Wilsons Solicitors LLP</cite></div></section>
+            <section class="quote"><div class="container"><div class="eyebrow">What people say</div><div class="quote-carousel" aria-live="polite"><button class="quote-nav prev" type="button" aria-label="Previous quote">←</button><div class="quote-panel"><blockquote id="quote-text">Noah was such an impressive addition to the occasion. He was professional, well-prepared, and fitted the atmosphere perfectly. We would happily book him again.</blockquote><cite id="quote-author">Holly Britten, Head of Marketing · Wilsons Solicitors LLP</cite></div><button class="quote-nav next" type="button" aria-label="Next quote">→</button></div></div></section>
             <section class="contact" id="contact"><div class="container"><div class="eyebrow">Based in Buckingham · Covering London, the Home Counties & beyond</div><h2>Ready to believe?</h2><p>Tell me about your event and let's create a little impossible together.</p><a class="btn" href="contact.html">Get in touch</a></div></section>
         </main>
         <footer><div class="container"><span>© 2026 Noah Jelf</span><span>Making lasting memories through magic.</span><span><a href="https://www.instagram.com/jelfus.magic" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61588926009670" target="_blank" rel="noopener noreferrer">Facebook</a></span></div></footer>
@@ -207,6 +211,8 @@
             const links = document.querySelector('nav ul');
             const quoteText = document.querySelector('#quote-text');
             const quoteAuthor = document.querySelector('#quote-author');
+            const prevButton = document.querySelector('.quote-nav.prev');
+            const nextButton = document.querySelector('.quote-nav.next');
             const quotes = [
                 {
                     text: 'Noah was such an impressive addition to the occasion. He was professional, well-prepared, and fitted the atmosphere perfectly. We would happily book him again.',
@@ -229,11 +235,14 @@
             }));
 
             let currentQuote = 0;
-            setInterval(() => {
-                currentQuote = (currentQuote + 1) % quotes.length;
+            const updateQuote = (direction) => {
+                currentQuote = (currentQuote + direction + quotes.length) % quotes.length;
                 quoteText.textContent = quotes[currentQuote].text;
                 quoteAuthor.textContent = quotes[currentQuote].author;
-            }, 5000);
+            };
+
+            prevButton.addEventListener('click', () => updateQuote(-1));
+            nextButton.addEventListener('click', () => updateQuote(1));
         </script>
     </body>
 </html>
