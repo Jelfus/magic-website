@@ -198,21 +198,42 @@
                 </div>
             </section>
 
-            <section class="quote"><div class="container"><div class="eyebrow">What people say</div><blockquote>Noah was such an impressive addition to the occasion. He was professional, well-prepared, and fitted the atmosphere perfectly. We would happily book him again.”</blockquote><cite>Holly Britten, Head of Marketing · Wilsons Solicitors LLP</cite></div></section>
+            <section class="quote"><div class="container"><div class="eyebrow">What people say</div><blockquote id="quote-text">Noah was such an impressive addition to the occasion. He was professional, well-prepared, and fitted the atmosphere perfectly. We would happily book him again.</blockquote><cite id="quote-author">Holly Britten, Head of Marketing · Wilsons Solicitors LLP</cite></div></section>
             <section class="contact" id="contact"><div class="container"><div class="eyebrow">Based in Buckingham · Covering London, the Home Counties & beyond</div><h2>Ready to believe?</h2><p>Tell me about your event and let's create a little impossible together.</p><a class="btn" href="contact.html">Get in touch</a></div></section>
         </main>
         <footer><div class="container"><span>© 2026 Noah Jelf</span><span>Making lasting memories through magic.</span><span><a href="https://www.instagram.com/jelfus.magic" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61588926009670" target="_blank" rel="noopener noreferrer">Facebook</a></span></div></footer>
         <script>
             const menu = document.querySelector('.menu');
             const links = document.querySelector('nav ul');
+            const quoteText = document.querySelector('#quote-text');
+            const quoteAuthor = document.querySelector('#quote-author');
+            const quotes = [
+                {
+                    text: 'Noah was such an impressive addition to the occasion. He was professional, well-prepared, and fitted the atmosphere perfectly. We would happily book him again.',
+                    author: 'Holly Britten, Head of Marketing · Wilsons Solicitors LLP'
+                },
+                {
+                    text: 'Noah was brilliant! Audience blown away. Thank you!',
+                    author: 'Sharon Cronk'
+                }
+            ];
+
             menu.addEventListener('click', () => {
                 const isOpen = links.classList.toggle('open');
                 menu.setAttribute('aria-expanded', isOpen);
             });
+
             links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
                 links.classList.remove('open');
                 menu.setAttribute('aria-expanded', 'false');
             }));
+
+            let currentQuote = 0;
+            setInterval(() => {
+                currentQuote = (currentQuote + 1) % quotes.length;
+                quoteText.textContent = quotes[currentQuote].text;
+                quoteAuthor.textContent = quotes[currentQuote].author;
+            }, 5000);
         </script>
     </body>
 </html>
